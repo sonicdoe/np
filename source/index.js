@@ -144,7 +144,7 @@ module.exports = async (input = 'patch', options) => {
 		]);
 	}
 
-	if (runTests) {
+	if (runTests && (pkg.scripts && pkg.scripts[testScript])) {
 		tasks.add([
 			{
 				title: 'Running tests using npm',
